@@ -1,0 +1,500 @@
+
+ 
+ <div class="courses-page">
+  <!-- ================= HEADER ================= -->
+  <div class="page-header">
+
+    <div>
+      <h2>Course Management</h2>
+      <p class="text-muted mb-0">
+        Dashboard / <span class="fw-semibold">Courses</span>
+      </p>
+    </div>
+
+    <button class="btn btn-primary add-course-btn" (click)="addCourse()">
+      <i class="bi bi-plus-circle-fill me-2"></i>
+      Add Course
+    </button>
+
+  </div>
+
+  <!-- ================= STATISTICS ================= -->
+
+  <div class="row g-5 mb-4">
+
+    <div class="col-xl-4 col-lg-6 col-md-6 px-3">
+
+      <div class="course-stat-card total-course">
+
+        <div>
+          <h6>Total Courses</h6>
+          <h2>148</h2>
+          <small>
+            <i class="bi bi-arrow-up"></i> +12% this month
+          </small>
+        </div>
+
+        <div class="stat-icon">
+          <i class="bi bi-journal-bookmark-fill"></i>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="col-xl-4 col-lg-6 col-md-6 px-3">
+
+      <div class="course-stat-card students-course">
+
+        <div>
+          <h6>Total Students</h6>
+          <h2>2,548</h2>
+          <small>
+            <i class="bi bi-arrow-up"></i>
+            +240 New
+          </small>
+        </div>
+
+        <div class="stat-icon">
+          <i class="bi bi-people-fill"></i>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="col-xl-4 col-lg-6 col-md-6 px-3">
+
+      <div class="course-stat-card revenue-course">
+
+        <div>
+          <h6>Revenue</h6>
+          <h2>₹4.8L</h2>
+          <small>
+            <i class="bi bi-currency-rupee"></i>
+            This Month
+          </small>
+        </div>
+
+        <div class="stat-icon">
+          <i class="bi bi-wallet2"></i>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- ================= SEARCH & FILTER CARD ================= -->
+
+  <div class="card course-table-card">
+
+    <div class="card-body">
+
+      <div class="row align-items-center mb-4">
+
+        <!-- Search Box -->
+
+        <div class="col-lg-5 mb-3 mb-lg-0">
+
+          <div class="search-box">
+
+            <i class="bi bi-search"></i>
+
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Search courses...">
+
+          </div>
+
+        </div>
+                <!-- Category Filter -->
+
+        <div class="col-lg-2 col-md-4 mb-3 mb-lg-0">
+
+          <select class="form-select">
+
+            <option>All Categories</option>
+
+            <option>Programming</option>
+
+            <option>Web Development</option>
+
+            <option>Database</option>
+
+            <option>Cloud Computing</option>
+
+            <option>Artificial Intelligence</option>
+
+          </select>
+
+        </div>
+
+        <!-- Entries -->
+
+        <div class="col-lg-3 col-md-4">
+
+          <div class="d-flex justify-content-end">
+
+            <select class="form-select w-auto">
+
+              <option>10 Entries</option>
+
+              <option>25 Entries</option>
+
+              <option>50 Entries</option>
+
+            </select>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- ================= COURSE TABLE ================= -->
+
+      <div class="table-responsive">
+
+        <table class="table align-middle">
+
+          <thead>
+
+            <tr>
+
+              <th>Course</th>
+
+              <th>Instructor</th>
+
+              <th>Category</th>
+
+              <th>Students</th>
+
+              <th>Price</th>
+
+              <th class="text-center">Actions</th>
+
+            </tr>
+
+          </thead>
+
+          <tbody>
+
+            <tr>
+
+              <td>
+
+                <div class="course-info">
+
+                  <img
+                    src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=120"
+                    alt="">
+
+                  <div>
+
+                    <h6>Java Full Stack Development</h6>
+
+                    <small>Duration : 6 Months</small>
+
+                  </div>
+
+                </div>
+
+              </td>
+
+              <td>John Smith</td>
+
+              <td>
+
+                <span class="category programming">
+
+                  Programming
+
+                </span>
+
+              </td>
+
+              <td>450</td>
+
+              <td class="price">₹4,999</td>
+
+              <td class="text-center">
+
+                <button class="btn btn-sm btn-info me-2">
+
+                  <i class="bi bi-eye-fill"></i>
+
+                </button>
+
+                <button class="btn btn-sm btn-warning me-2">
+
+                  <i class="bi bi-pencil-fill"></i>
+
+                </button>
+
+                <button class="btn btn-sm btn-danger">
+
+                  <i class="bi bi-trash-fill"></i>
+
+                </button>
+
+              </td>
+
+            </tr>
+                        <!-- Course 2 -->
+
+            <tr>
+
+              <td>
+
+                <div class="course-info">
+
+                  <img
+                    src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=120"
+                    alt="Course">
+
+                  <div>
+
+                    <h6>Angular Development</h6>
+
+                    <small>Duration : 4 Months</small>
+
+                  </div>
+
+                </div>
+
+              </td>
+
+              <td>David Lee</td>
+
+              <td>
+                <span class="category web">
+                  Web Development
+                </span>
+              </td>
+
+              <td>320</td>
+
+              <td class="price">₹3,999</td>
+
+              <td class="text-center">
+                <div class=""
+
+                <button class="btn btn-warning btn-sm me-2">
+                  <i class="bi bi-pencil-fill"></i>
+                </button>
+<br>
+                <button class="btn btn-danger btn-sm">
+                  <i class="bi bi-trash-fill"></i>
+                </button>
+
+              </td>
+
+            </tr>
+
+            <!-- Course 3 -->
+
+            <tr>
+
+              <td>
+
+                <div class="course-info">
+
+                  <img
+                    src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=120"
+                    alt="Course">
+
+                  <div>
+
+                    <h6>Spring Boot Masterclass</h6>
+
+                    <small>Duration : 5 Months</small>
+
+                  </div>
+
+                </div>
+
+              </td>
+
+              <td>Emily Davis</td>
+
+              <td>
+
+                <span class="category programming">
+
+                  Programming
+
+                </span>
+
+              </td>
+
+              <td>280</td>
+
+              <td class="price">₹4,499</td>
+
+              <td class="text-center">
+
+                <button class="btn btn-info btn-sm me-2">
+                  <i class="bi bi-eye-fill"></i>
+                </button>
+
+                <button class="btn btn-warning btn-sm me-2">
+                  <i class="bi bi-pencil-fill"></i>
+                </button>
+
+                <button class="btn btn-danger btn-sm">
+                  <i class="bi bi-trash-fill"></i>
+                </button>
+
+              </td>
+
+            </tr>
+
+            <!-- Course 4 -->
+
+            <tr>
+
+              <td>
+
+                <div class="course-info">
+
+                  <img
+                    src="https://images.unsplash.com/photo-1516321497487-e288fb19713f?w=120"
+                    alt="Course">
+
+                  <div>
+
+                    <h6>MySQL Database</h6>
+
+                    <small>Duration : 2 Months</small>
+
+                  </div>
+
+                </div>
+
+              </td>
+
+              <td>Michael Brown</td>
+
+              <td>
+
+                <span class="category database">
+
+                  Database
+
+                </span>
+
+              </td>
+
+              <td>190</td>
+
+              <td class="price">₹2,999</td>
+
+              <td class="text-center">
+
+                <button class="btn btn-info btn-sm me-2">
+                  <i class="bi bi-eye-fill"></i>
+                </button>
+
+                <button class="btn btn-warning btn-sm me-2">
+                  <i class="bi bi-pencil-fill"></i>
+                </button>
+
+                <button class="btn btn-danger btn-sm">
+                  <i class="bi bi-trash-fill"></i>
+                </button>
+
+              </td>
+
+            </tr>
+
+          </tbody>
+
+        </table>
+
+      </div>
+            <!-- ================= PAGINATION ================= -->
+
+      <div class="d-flex justify-content-between align-items-center mt-4 flex-wrap">
+
+        <p class="text-muted mb-2">
+          Showing 1 to 4 of 148 Courses
+        </p>
+
+        <nav>
+
+          <ul class="pagination mb-0">
+
+            <li class="page-item disabled">
+
+              <a class="page-link">
+
+                Previous
+
+              </a>
+
+            </li>
+
+            <li class="page-item active">
+
+              <a class="page-link">
+
+                1
+
+              </a>
+
+            </li>
+
+            <li class="page-item">
+
+              <a class="page-link">
+
+                2
+
+              </a>
+
+            </li>
+
+            <li class="page-item">
+
+              <a class="page-link">
+
+                3
+
+              </a>
+
+            </li>
+
+            <li class="page-item">
+
+              <a class="page-link">
+
+                4
+
+              </a>
+
+            </li>
+
+            <li class="page-item">
+
+              <a class="page-link">
+
+                Next
+
+              </a>
+
+            </li>
+
+          </ul>
+
+        </nav>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
