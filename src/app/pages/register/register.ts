@@ -3,7 +3,8 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { RouterLink } from '@angular/router';
 import { NgClass } from '@angular/common';
-
+import { AuthService } from '../../core/services/auth';
+import { RegisterRequest } from '../../models/register';
 @Component({
   selector: 'app-register',
   standalone: true,
@@ -18,6 +19,7 @@ import { NgClass } from '@angular/common';
 })
 export class Register {
 
+  constructor(private authService: AuthService) {}
   firstName: string = '';
   lastName: string = '';
   email: string = '';
@@ -37,48 +39,52 @@ export class Register {
     this.showConfirmPassword = !this.showConfirmPassword;
   }
 
-  register(): void {
+ register(): void {
 
-    if (
-      !this.firstName ||
-      !this.lastName ||
-      !this.email ||
-      !this.phone ||
-      !this.role ||
-      !this.password ||
-      !this.confirmPassword
-    ) {
-      alert('Please fill all the fields.');
-      return;
-    }
-
-    if (this.password !== this.confirmPassword) {
-      alert('Passwords do not match.');
-      return;
-    }
-
-    // UI Only (Backend integration later)
-    console.log('Registration Successful');
-
-    console.log({
-      firstName: this.firstName,
-      lastName: this.lastName,
-      email: this.email,
-      phone: this.phone,
-      role: this.role,
-      password: this.password
-    });
-
-    alert('Registration Successful!');
-
-    // Clear the form
-    this.firstName = '';
-    this.lastName = '';
-    this.email = '';
-    this.phone = '';
-    this.role = '';
-    this.password = '';
-    this.confirmPassword = '';
+  if (
+    !this.firstName ||
+    !this.email ||
+    !this.password ||
+    !this.confirmPassword
+  ) {
+    alert('Please fill all the fields.');
+    return;
   }
 
-}
+  if (this.password !== this.confirmPassword) {
+    alert('Passwords do not match.');
+    return;
+  }
+
+  const registerData: RegisterRequest = {
+
+    name: this.firstName+" "+this.lastName,
+    email: this.email,
+    password: this.password
+
+  };
+
+  this.authService.register(registerData).subscribe({
+
+    next: (response) => {
+
+      console.log(response);
+      alert("Registration Successful!");
+
+      this.firstName = '';
+      this.email = '';
+      this.password = '';
+      this.confirmPassword = '';
+
+    },
+
+    error: (error) => {
+
+      console.error(error);
+      alert("Registration Failed!");
+
+    }
+
+  });
+
+}}

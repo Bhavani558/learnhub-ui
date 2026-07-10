@@ -78,6 +78,12 @@ import { Profile } from './pages/admin/profile/profile';
 import { Students } from './pages/admin/students/students';
 import { Instructors } from './pages/admin/instructors/instructors';
 import { Landing } from './pages/landing/landing';
+import { StudentLayout } from './pages/student/student-layout/student-layout';
+import { StudentDashboard } from './pages/student/dashboard/dashboard';
+import { ExploreCourses } from './pages/student/explore-courses/explore-courses';
+import { MyCourses } from './pages/student/my-courses/my-courses';
+import { Progress } from './pages/student/progress/progress';
+import { Quiz } from './pages/student/quiz/quiz';
 export const routes: Routes = [
 { path: '', component: Landing },
 
@@ -126,5 +132,45 @@ export const routes: Routes = [
         }
 
     ]
+},
+{
+path:'student',
+
+component:StudentLayout,
+
+children:[
+
+{
+path:'dashboard',
+component:StudentDashboard
+},
+
+{
+path:'explore-courses',
+component:ExploreCourses
+},
+
+{
+path:'my-courses',
+component:MyCourses
+},
+
+{
+path:'progress',
+component:Progress
+},
+
+{
+path:'quizzes',
+component:Quiz
+},
+{
+path:'',
+redirectTo:'dashboard',
+pathMatch:'full'
 }
+
+]
+
+},
 ];

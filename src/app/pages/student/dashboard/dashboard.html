@@ -1,1 +1,130 @@
-<p>dashboard works!</p>
+<div class="dashboard-container">
+
+    <!-- Welcome -->
+
+    <div class="welcome-card">
+
+        <div>
+            <h2>Welcome Back, {{dashboard?.studentName}} 👋</h2>
+
+            <p>
+                Continue learning and achieve your goals.
+            </p>
+
+        </div>
+
+        <img
+        src="assets/student.png"
+        alt="student">
+
+    </div>
+
+    <!-- Cards -->
+
+    <div class="summary-grid">
+
+        <div class="summary-card">
+
+            <div class="icon green">
+
+                <i class="bi bi-book-fill"></i>
+
+            </div>
+
+            <div>
+
+                <h3>{{dashboard?.enrolledCourses}}</h3>
+
+                <p>Enrolled Courses</p>
+
+            </div>
+
+        </div>
+
+        <div class="summary-card">
+
+            <div class="icon blue">
+
+                <i class="bi bi-play-circle-fill"></i>
+
+            </div>
+
+            <div>
+
+                <h3>{{dashboard?.enrolledCourses}}</h3>
+
+                <p>Continue Learning</p>
+
+            </div>
+
+        </div>
+
+        <div class="summary-card">
+
+            <div class="icon purple">
+
+                <i class="bi bi-award-fill"></i>
+
+            </div>
+
+            <div>
+
+                <h3>{{dashboard?.certificates}}</h3>
+
+                <p>Certificates</p>
+
+            </div>
+
+        </div>
+
+        <div class="summary-card">
+
+            <div class="icon orange">
+
+                <i class="bi bi-graph-up-arrow"></i>
+
+            </div>
+
+            <div>
+
+                <h3>{{dashboard?.overallProgress}}%</h3>
+
+                <p>Overall Progress</p>
+
+            </div>
+
+        </div>
+
+    </div>
+</div>
+<div class="my-courses">
+
+    <h3>My Courses</h3>
+
+    <div class="course-card"
+         *ngFor="let course of courses">
+
+        <h5>{{course.title}}</h5>
+
+        <p>{{course.instructor}}</p>
+
+        <div class="progress">
+
+            <div class="progress-bar"
+                 [style.width.%]="course.progress">
+
+                {{course.progress}}%
+
+            </div>
+
+        </div>
+
+        <button class="btn btn-primary">
+
+            Continue
+
+        </button>
+
+    </div>
+
+</div>
